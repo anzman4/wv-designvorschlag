@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mitglieder – Wirtschaftsvereinigung Wertingen (Designvorschlag)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dots" aria-hidden="true">
+  <span class="dot" style="--c:var(--orange)"></span>
+  <span class="dot" style="--c:var(--yellow)"></span>
+  <span class="dot" style="--c:var(--blue)"></span>
+  <span class="dot" style="--c:var(--green)"></span>
+</div>
+
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="Wirtschaftsvereinigung Wertingen – Startseite">
+    <span class="brand-word">wertingen</span>
+    <span class="brand-sub">Wirtschaftsvereinigung</span>
+  </a>
+  <nav class="nav-links" aria-label="Hauptnavigation">
+    <a href="unternehmen.html">Für Unternehmen</a>
+    <a href="mitglieder.html" aria-current="page">Mitglieder</a>
+    <a href="index.html#scheck">Städtle-Scheck</a>
+    <a href="index.html#termine">Termine</a>
+    <a href="index.html#verein">Verein</a>
+  </nav>
+  <a class="btn btn-dark nav-cta" href="unternehmen.html#beitritt">Mitglied werden</a>
+  <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main>
+  <section class="dir-head" data-stage>
+    <div class="wrap">
+      <p class="eyebrow"><span class="num">03</span> Mitgliederverzeichnis</p>
+      <h1 class="display-2 split">Wer macht Wertingen?</h1>
+      <div class="anchors hero-anchors"><i data-a></i><i data-a></i><i data-a></i><i data-a></i></div>
+      <p class="lead">Finden Sie Händler, Handwerker, Gastronomen und Dienstleister aus Wertingen und Umgebung.</p>
+    </div>
+  </section>
+
+  <div class="dir-tools">
+    <div class="wrap">
+      <input class="search" id="q" type="search" placeholder="Name, Branche oder Straße suchen …" aria-label="Mitglieder durchsuchen">
+      <div class="filters" id="filters" role="group" aria-label="Nach Branche filtern"></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <span class="brand-word">wertingen</span>
+      <p>Wirtschaftsvereinigung Wertingen<br>und Umgebung e.V.</p>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <p>Eichenweg 4, 86637 Wertingen<br>0 82 72 – 986 98 15<br><a href="mailto:servus@wv-wertingen.de">servus@wv-wertingen.de</a></p>
+    </div>
+    <div>
+      <h4>Folgen</h4>
+      <p><a href="https://www.instagram.com/wv_wertingen/">Instagram @wv_wertingen</a></p>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <p><a href="#">Impressum</a><br><a href="#">Datenschutz</a></p>
+    </div>
+  </div>
+  <p class="wrap legal">Designvorschlag · nicht veröffentlicht · Stand November 2026</p>
+</footer>
+
+<script src="members.js"></script>
+<script src="main.js"></script>
+<script>
+  // Verzeichnis: Suche + Branchenfilter
+  const grid = document.getElementById("grid");
+  const q = document.getElementById("q");
+  const filters = document.getElementById("filters");
+  const count = document.getElementById("count");
+  const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  let active = decodeURIComponent(location.hash.slice(1)) || "";
+
+  const cats = Object.keys(CATEGORIES);
+  filters.innerHTML = ["", ...cats].map(c =>
+    `<button class="chip" data-c="${esc(c)}" style="--c:${c ? CATEGORIES[c] : "var(--ink)"}">${c ? "<i></i>" : ""}${c || "Alle"}</button>`
+  ).join("");
+
+  function render() {
+    const term = q.value.trim().toLowerCase();
+    const list = MEMBERS
+      .filter(m => !active || m.c.includes(active))
+      .filter(m => !term || (m.n + " " + m.a + " " + m.c.join(" ")).toLowerCase().includes(term))
+      .sort((a, b) => a.n.localeCompare(b.n, "de"));
+    filters.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.c === active));
+    count.textContent = `${list.length} von ${MEMBERS.length} Mitgliedern`;
+    grid.innerHTML = list.map((m, i) => `
+      <article class="card" style="--c:${CATEGORIES[m.c[0]] || "var(--ink)"};animation-delay:${Math.min(i, 12) * 40}ms">
+        <div class="card-logo">${logoTile(m)}</div>
+        <span class="tag"><i></i>${esc(m.c[0] || "")}</span>
+        <h2>${esc(m.n)}</h2>
+        <p>${esc(m.a)}</p>
+      </article>`).join("");
+  }
+  filters.addEventListener("click", e => {
+    const b = e.target.closest(".chip");
+    if (!b) return;
+    active = b.dataset.c === active ? "" : b.dataset.c;
+    render();
+  });
+  q.addEventListener("input", render);
+  render();
+</script>
+<div class="draft-banner" role="note">Designvorschlag · Entwurf, nicht die offizielle Website der WV Wertingen</div>
+</body>
+</html>
