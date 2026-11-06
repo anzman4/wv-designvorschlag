@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Wertingen bietet mehr – Wirtschaftsvereinigung Wertingen (Entwurf 2)</title>
+<meta name="description" content="Designvorschlag 2 für die Wirtschaftsvereinigung Wertingen und Umgebung e.V.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="logo" href="#" aria-label="Wirtschaftsvereinigung Wertingen – Startseite">
+    <span class="logo-word">wertingen</span>
+    <span class="logo-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  </a>
+  <nav class="pills" aria-label="Hauptnavigation">
+    <a href="#finden">Finden</a>
+    <a href="#unternehmen">Für Unternehmen</a>
+    <a href="#scheck">Städtle-Scheck</a>
+    <a href="#live">Live</a>
+  </nav>
+  <a class="cta" href="#mitmachen">Mitglied werden</a>
+</header>
+
+<main>
+
+<!-- BENTO -->
+<section class="bento" aria-label="Überblick">
+  <div class="tile t-hero">
+    <p class="kicker">Wirtschaftsvereinigung Wertingen und Umgebung e.V.</p>
+    <h1>Wertingen<br>bietet <span class="hl">mehr.</span></h1>
+    <div class="search" role="search">
+      <label for="q" class="sr">Mitglieder durchsuchen</label>
+      <input id="q" type="search" placeholder="Wen suchst du? z. B. Bäcker, Optik, Friseur …" autocomplete="off" aria-controls="hits">
+      <span class="search-icon" aria-hidden="true"></span>
+      <ul class="hits" id="hits" role="listbox" hidden></ul>
+    </div>
+    <p class="chips-label">Beliebt:</p>
+    <div class="quick">
+      <button data-q="Gaststätten">Essen &amp; Trinken</button>
+      <button data-q="Mode">Mode</button>
+      <button data-q="Gesundheit">Gesundheit</button>
+      <button data-q="Haus">Haus &amp; Garten</button>
+    </div>
+  </div>
+
+  <a class="tile t-video" href="#live">
+    <video src="../media/fruehling.mp4" poster="../media/fruehling.jpg" autoplay muted loop playsinline aria-label="Video: Frühling in der Stadt, 2. Mai 2026"></video>
+    <span class="sticker s-red">● Frühling in der Stadt</span>
+  </a>
+
+  <a class="tile t-orange" href="#finden">
+    <span class="t-label">Mitglieder</span>
+    <b class="t-big" data-count="95">95</b>
+    <span class="t-foot">Betriebe aus 8 Branchen <span class="arrow">↗</span></span>
+  </a>
+
+  <a class="tile t-yellow" href="#scheck">
+    <span class="t-label">Städtle-Scheck</span>
+    <img src="../media/scheck-foto.jpg" alt="" class="t-scheck" loading="lazy">
+    <span class="t-foot">Das Geschenk für Wertingen <span class="arrow">↗</span></span>
+  </a>
+
+  <a class="tile t-blue" href="#live">
+    <span class="t-label">Schlossweihnacht in</span>
+    <b class="t-big" id="countdown">–</b>
+    <span class="t-foot">Tagen · ab 04.12.2026 <span class="arrow">↗</span></span>
+  </a>
+
+  <a class="tile t-green" href="#mitmachen">
+    <span class="t-label">Für Unternehmen</span>
+    <b class="t-mid">7,50 €<small>/Monat</small></b>
+    <span class="t-foot">Jetzt Mitglied werden <span class="arrow">↗</span></span>
+  </a>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-clip" aria-hidden="true"><div class="ticker"><div class="ticker-track" id="ticker"></div></div></div>
+
+<!-- FINDEN -->
+<section class="sec" id="finden">
+  <div class="sec-head">
+    <h2>Finde deinen<br><span class="hl-o">Betrieb.</span></h2>
+    <p>95 Mitglieder, 8 Branchen. Tippe eine Branche an.</p>
+  </div>
+  <div class="cats" id="cats"></div>
+  <div class="results">
+    <div class="results-bar">
+      <b id="res-title">Alle Mitglieder</b>
+      <span id="res-count"></span>
+    </div>
+    <ul class="list" id="list"></ul>
+    <button class="more" id="more">Mehr anzeigen</button>
+  </div>
+</section>
+
+<!-- UNTERNEHMEN: gestapelte Karten -->
+<section class="sec" id="unternehmen">
+  <div class="sec-head">
+    <h2>Dein Betrieb.<br><span class="hl-b">Mehr drin.</span></h2>
+    <p>Vier Gründe, warum 95 Unternehmen dabei sind.</p>
+  </div>
+  <div class="stack">
+    <article class="card c-orange">
+      <span class="card-no">01</span>
+      <div>
+        <h3>Gesehen werden</h3>
+        <p>Dein Logo im Mitgliederverzeichnis, Vorstellung beim „Vorstell-Mittwoch“ auf Instagram, Präsenz bei allen Aktionen.</p>
+      </div>
+      <img src="../media/insta-vorstell-mittwoch.jpg" alt="" loading="lazy">
+    </article>
+    <article class="card c-yellow">
+      <span class="card-no">02</span>
+      <div>
+        <h3>Kaufkraft bleibt hier</h3>
+        <p>Als Annahmestelle für den Städtle-Scheck holst du Kundschaft ins Geschäft, die sonst online bestellt.</p>
+      </div>
+      <img src="../media/insta-scheck.jpg" alt="" loading="lazy">
+    </article>
+    <article class="card c-blue">
+      <span class="card-no">03</span>
+      <div>
+        <h3>Netzwerk statt Einzelkampf</h3>
+        <p>Weißwurst-Treffen, Weinpräsentation, kurze Wege zu Partnern, Kunden und Fachkräften im Ort.</p>
+      </div>
+      <img src="../img/hero.jpg" alt="" loading="lazy">
+    </article>
+    <article class="card c-green">
+      <span class="card-no">04</span>
+      <div>
+        <h3>Gemeinsam lauter</h3>
+        <p>Frühling im Städtle, Herbstmarkt, Schlossweihnacht, gemeinsame Rabattaktionen und eine Stimme gegenüber der Stadt.</p>
+      </div>
+      <img src="../media/insta-10-prozent.jpg" alt="" loading="lazy">
+    </article>
+  </div>
+</section>
+
+<!-- SCHECK -->
+<section class="sec scheck" id="scheck">
+  <div class="scheck-grid">
+    <div class="scheck-copy">
+      <h2>Ein Scheck.<br><span class="hl-y">Ganz Wertingen.</span></h2>
+      <div class="values">
+        <span>5 €</span><span>10 €</span><span>20 €</span><span>50 €</span>
+      </div>
+      <dl class="how">
+        <div><dt>Kaufen</dt><dd>Schreibwaren Gerblinger am Marktplatz oder Getränke Moraw. Firmen auch auf Rechnung.</dd></div>
+        <div><dt>Einlösen</dt><dd>Bei fast allen Mitgliedsbetrieben. Achte auf das Plakat im Schaufenster.</dd></div>
+        <div><dt>Händler</dt><dd>Eingelöste Schecks mit dem Rückgabeformular einreichen, Betrag kommt aufs Konto.</dd></div>
+      </dl>
+    </div>
+    <div class="ticket-wrap">
+      <div class="ticket">
+        <div class="ticket-l">
+          <span class="ticket-k">Städtle-Scheck</span>
+          <b>20&nbsp;€</b>
+          <span class="ticket-s">Wertingen bietet mehr.</span>
+        </div>
+        <div class="ticket-r">
+          <span class="logo-dots big" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="ticket-no">Nr. 004711</span>
+        </div>
+      </div>
+      <img class="ticket-photo" src="../media/scheck-foto.jpg" alt="Echte Städtle-Schecks" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- LIVE / REELS -->
+<section class="sec" id="live">
+  <div class="sec-head">
+    <h2>Live aus<br><span class="hl-g">dem Städtle.</span></h2>
+    <p><a href="https://www.instagram.com/wv_wertingen/">@wv_wertingen</a> · 496 Follower</p>
+  </div>
+  <div class="event-row">
+    <div class="event-big">
+      <span class="sticker s-blue">Nächster Termin</span>
+      <h3>Wertinger Schlossweihnacht</h3>
+      <p>04.–06. &amp; 11.–13. Dezember 2026 · Schlossgarten am Pappenheimer Schloss · über 50 Aussteller</p>
+    </div>
+    <ul class="past">
+      <li><time>25.10.</time> Herbstmarkt Wertingen</li>
+      <li><time>02.10.</time> Interkulturelles Oktoberfest</li>
+      <li><time>25.09.</time> Weißwurst, Breze, Bier &amp; Austausch</li>
+      <li><time>19.09.</time> Weinpräsentation 2.0</li>
+    </ul>
+  </div>
+  <div class="phones" id="phones">
+    <a class="phone" href="https://www.instagram.com/wv_wertingen/"><video src="../media/fruehling.mp4" poster="../media/fruehling.jpg" muted loop playsinline preload="none"></video><span>Frühling in der Stadt</span></a>
+    <a class="phone" href="https://www.instagram.com/wv_wertingen/"><video src="../media/stand.mp4" poster="../media/stand.jpg" muted loop playsinline preload="none"></video><span>Mitglieder am Markt</span></a>
+    <a class="phone img" href="https://www.instagram.com/p/DYXvYP5uoIM/"><img src="../media/insta-maibaum.jpg" alt="Maibaum" loading="lazy"><span>Maibaum</span></a>
+    <a class="phone img" href="https://www.instagram.com/p/DXoklY2CAMN/"><img src="../media/insta-fruehling.jpg" alt="Frühling im Städtle" loading="lazy"><span>Frühling im Städtle</span></a>
+  </div>
+</section>
+
+<!-- VORSTAND -->
+<section class="sec team">
+  <div class="sec-head">
+    <h2>Die Köpfe<br><span class="hl-o">dahinter.</span></h2>
+    <p>Acht Ehrenamtliche, gewählt 2025.</p>
+  </div>
+  <ul class="faces">
+    <li><img src="../media/vorstand-katja-killisperger.jpg" alt="" loading="lazy"><b>Katja Killisperger</b><span>1. Vorsitzende</span></li>
+    <li><img src="../media/vorstand-alexander-bischof.jpg" alt="" loading="lazy"><b>Alexander Bischof</b><span>2. Vorsitzender</span></li>
+    <li><img src="../media/vorstand-andreas-klimesch.jpg" alt="" loading="lazy"><b>Andreas Klimesch</b><span>Schatzmeister</span></li>
+    <li><img src="../media/vorstand-hans-moraw.jpg" alt="" loading="lazy"><b>Hans Moraw</b><span>Beisitzer</span></li>
+    <li><img src="../media/vorstand-katharina-hanel.jpg" alt="" loading="lazy"><b>Katharina Hanel</b><span>Beisitzerin</span></li>
+    <li><img src="../media/vorstand-florian-stepan.jpg" alt="" loading="lazy"><b>Florian Stepan</b><span>Beisitzer</span></li>
+    <li><img src="../media/vorstand-magdalena-keiss.jpg" alt="" loading="lazy"><b>Magdalena Keiß</b><span>Beisitzerin</span></li>
+    <li><img src="../media/vorstand-stefan-krebs.jpg" alt="" loading="lazy"><b>Stefan Krebs</b><span>Beisitzer</span></li>
+  </ul>
+</section>
+
+<!-- MITMACHEN -->
+<section class="sec join" id="mitmachen">
+  <h2 class="mega">Mach<br>mit.</h2>
+  <div class="join-box">
+    <div class="price">
+      <b>7,50 €</b><span>im Monat · 90 € im Jahr</span>
+    </div>
+    <ul>
+      <li>Logo &amp; Eintrag im Verzeichnis</li>
+      <li>Annahmestelle Städtle-Scheck</li>
+      <li>Alle Netzwerktreffen</li>
+      <li>Gemeinsame Aktionen &amp; Werbung</li>
+    </ul>
+    <div class="join-actions">
+      <a class="cta big" href="#">In 3 Minuten beitreten</a>
+      <a class="call" href="tel:+4982729869815"><img src="../media/vorstand-katja-killisperger.jpg" alt=""><span><b>Lieber erst reden?</b>0 82 72 – 986 98 15</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <span class="logo-word">wertingen</span>
+  <p>Wirtschaftsvereinigung Wertingen und Umgebung e.V. · Eichenweg 4, 86637 Wertingen · <a href="mailto:servus@wv-wertingen.de">servus@wv-wertingen.de</a></p>
+  <p><a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="https://www.instagram.com/wv_wertingen/">Instagram</a></p>
+  <p class="legal">Designvorschlag 2 · nicht veröffentlicht · Stand November 2026</p>
+</footer>
+
+<script src="../members.js"></script>
+<script src="app.js"></script>
+<div class="draft-banner" role="note">Entwurf 2 · nicht die offizielle WV-Website</div>
+</body>
+</html>
