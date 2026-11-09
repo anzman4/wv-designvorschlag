@@ -287,7 +287,7 @@
 <script src="main.js"></script>
 <script>
   // Bestelladresse Städtle-Scheck: nur hier pflegen
-  const SCHECK_MAIL = "wbb.klimsche@gmail.com";
+  const SCHECK_MAIL = "wbb.klimesch@gmail.com";
   document.querySelectorAll("[data-scheck-mail]").forEach(a => {
     a.href = "mailto:" + SCHECK_MAIL + "?subject=" + encodeURIComponent("Städtle-Scheck");
     if (a.matches(".muted a")) a.textContent = SCHECK_MAIL;
