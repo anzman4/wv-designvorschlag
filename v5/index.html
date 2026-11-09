@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#faf8f4">
+<title>Wertingen – Wirtschaftsvereinigung (Entwurf 5)</title>
+<meta name="description" content="Designvorschlag 5: Die Wirtschaftsvereinigung Wertingen als App fürs Handy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation: unten am Daumen (Handy) / links als Leiste (Desktop) -->
+<nav class="tabbar" aria-label="Hauptnavigation">
+  <a class="tb-logo" href="#start" aria-label="Start"><b>wertingen</b><span class="dots4"><i></i><i></i><i></i><i></i></span></a>
+  <a href="#start" data-view="start"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Start</span></a>
+  <a href="#suchen" data-view="suchen"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><span>Suchen</span></a>
+  <a href="#scheck" data-view="scheck"><svg viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M15 6v12" stroke-dasharray="2 2"/></svg><span>Scheck</span></a>
+  <a href="#mitmachen" data-view="mitmachen"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>Mitmachen</span></a>
+  <a href="#mehr" data-view="mehr"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg><span>Mehr</span></a>
+</nav>
+
+<main class="app">
+
+  <!-- ============ START ============ -->
+  <section class="view" id="view-start" data-title="Start">
+    <header class="appbar">
+      <a class="logo" href="#start"><b>wertingen</b><span class="dots4"><i></i><i></i><i></i><i></i></span></a>
+      <a class="icon-btn" href="tel:+4982729869815" aria-label="Anrufen"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+    </header>
+
+    <div class="stories" role="list" aria-label="Stories">
+      <button class="story" role="listitem" data-story="0"><span class="ring"><img src="../media/fruehling.jpg" alt=""></span><small>Frühling</small></button>
+      <button class="story" role="listitem" data-story="1"><span class="ring"><img src="../media/stand.jpg" alt=""></span><small>Am Markt</small></button>
+      <button class="story" role="listitem" data-story="2"><span class="ring"><img src="../media/insta-scheck.jpg" alt=""></span><small>Scheck</small></button>
+      <button class="story" role="listitem" data-story="3"><span class="ring"><img src="../media/insta-maibaum.jpg" alt=""></span><small>Maibaum</small></button>
+      <button class="story" role="listitem" data-story="4"><span class="ring"><img src="../media/insta-vorstell-mittwoch.jpg" alt=""></span><small>Vorstellung</small></button>
+    </div>
+
+    <div class="pad">
+      <h1 class="hello">Servus in<br>Wertingen.</h1>
+      <a class="search-pill" href="#suchen" data-focus><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><span>Betrieb suchen – z. B. Bäckerei</span></a>
+
+      <div class="quick-grid">
+        <a href="#suchen" class="q q-blue"><b>95</b><span>Mitglieder finden</span></a>
+        <a href="#scheck" class="q q-yellow"><b>Scheck</b><span>Kaufen &amp; einlösen</span></a>
+        <a href="#mehr" data-jump="termine" class="q q-orange"><b id="cd">–</b><span>Tage bis zur Schlossweihnacht</span></a>
+        <a href="#mitmachen" class="q q-green"><b>7,50 €</b><span>Mitglied werden</span></a>
+      </div>
+
+      <h2 class="h">Nächster Termin</h2>
+      <article class="tile event">
+        <div class="date"><b>04</b><span>Dez</span></div>
+        <div>
+          <b>Wertinger Schlossweihnacht</b>
+          <p>04.–06. &amp; 11.–13.12. · Schlossgarten · über 50 Aussteller</p>
+        </div>
+      </article>
+      <div class="row-actions">
+        <button class="chip-btn" id="ics"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>In Kalender</button>
+        <a class="chip-btn" href="https://www.google.com/maps/search/?api=1&query=Schloss+Wertingen" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Route</a>
+      </div>
+
+      <h2 class="h">Neu dabei als Verkaufsstelle</h2>
+      <div class="hscroll">
+        <a class="mini" href="#scheck"><img src="../media/logos/garten-reiter-gmbh.png" alt=""><b>Garten Reiter</b><span>Städtle-Scheck</span></a>
+        <a class="mini" href="#scheck"><img src="../media/logos/esso-station-karl-klein.png" alt=""><b>Esso Klein</b><span>Städtle-Scheck</span></a>
+        <a class="mini" href="#scheck"><img src="../media/logos/gerblinger-buchhandlung-buerobed.png" alt=""><b>Gerblinger</b><span>wie gewohnt</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SUCHEN ============ -->
+  <section class="view" id="view-suchen" data-title="Suchen" hidden>
+    <header class="appbar sticky">
+      <div class="search-field">
+        <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
+        <label class="sr-only" for="q">Betrieb suchen</label>
+        <input id="q" type="search" placeholder="Name, Branche, Straße" autocomplete="off" enterkeyhint="search">
+      </div>
+    </header>
+    <div class="chips" id="chips" role="group" aria-label="Branche"></div>
+    <p class="count pad" id="count" aria-live="polite"></p>
+    <ul class="list" id="list"></ul>
+  </section>
+
+  <!-- ============ SCHECK ============ -->
+  <section class="view" id="view-scheck" data-title="Städtle-Scheck" hidden>
+    <header class="appbar"><h1 class="title">Städtle-Scheck</h1></header>
+    <div class="pad">
+      <div class="ticket">
+        <span>Ein Scheck. 100 Möglichkeiten.</span>
+        <b>100 % Wertingen.</b>
+        <div class="vals"><i>5 €</i><i>10 €</i><i>20 €</i><i>50 €</i></div>
+      </div>
+      <div class="seg" role="tablist" aria-label="Städtle-Scheck">
+        <button role="tab" aria-selected="true" aria-controls="s-kaufen" id="sk">Kaufen</button>
+        <button role="tab" aria-selected="false" aria-controls="s-firma" id="sf" tabindex="-1">Firmen</button>
+        <button role="tab" aria-selected="false" aria-controls="s-haendler" id="sh" tabindex="-1">Händler</button>
+      </div>
+
+      <div role="tabpanel" id="s-kaufen" aria-labelledby="sk">
+        <div class="stack">
+          <article class="tile place"><img src="../media/logos/gerblinger-buchhandlung-buerobed.png" alt=""><div><b>Schreibwaren Gerblinger</b><span>Am Marktplatz 14</span></div><a class="round" href="https://www.google.com/maps/search/?api=1&query=Am+Marktplatz+14+86637+Wertingen" target="_blank" rel="noopener" aria-label="Route zu Gerblinger"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></a></article>
+          <article class="tile place"><img src="../media/logos/garten-reiter-gmbh.png" alt=""><div><b>Garten Reiter <em>Neu</em></b><span>Bauerngasse 47</span></div><a class="round" href="https://www.google.com/maps/search/?api=1&query=Bauerngasse+47+86637+Wertingen" target="_blank" rel="noopener" aria-label="Route zu Garten Reiter"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></a></article>
+          <article class="tile place"><img src="../media/logos/esso-station-karl-klein.png" alt=""><div><b>Esso-Tankstelle Klein <em>Neu</em></b><span>Augsburger Str. 31 · lange offen</span></div><a class="round" href="https://www.google.com/maps/search/?api=1&query=Augsburger+Str.+31+86637+Wertingen" target="_blank" rel="noopener" aria-label="Route zur Esso-Tankstelle Klein"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></a></article>
+        </div>
+        <a class="big-btn" data-scheck-mail href="#">Per E-Mail bestellen</a>
+        <p class="note">Einlösen bei allen teilnehmenden Betrieben – achte auf das Städtle-Scheck-Zeichen. Keine Barauszahlung, keine Teileinlösung.</p>
+      </div>
+
+      <div role="tabpanel" id="s-firma" aria-labelledby="sf" hidden>
+        <div class="tile big-num"><b>bis 50 €</b><span>pro Monat und Mitarbeiter als steuerfreier Sachbezug möglich*</span></div>
+        <ul class="ticks">
+          <li>Mitarbeiter wertschätzen, regional schenken</li>
+          <li>Ideal zu Weihnachten, Geburtstag oder als Dankeschön</li>
+          <li>Größere Mengen und Bestellung auf Rechnung</li>
+        </ul>
+        <a class="big-btn" data-scheck-mail href="#">Anfrage an Andreas Klimesch</a>
+        <p class="note">*Nur unter bestimmten Voraussetzungen. Bitte mit Lohnbuchhaltung oder Steuerberatung abstimmen.</p>
+      </div>
+
+      <div role="tabpanel" id="s-haendler" aria-labelledby="sh" hidden>
+        <ol class="numbered">
+          <li>Schecks auf der Rückseite stempeln und unterschreiben</li>
+          <li>Abrechnungsformular ausfüllen</li>
+          <li>Original-Schecks mit Formular einsenden</li>
+          <li>Erstattung nach Prüfung</li>
+        </ol>
+        <article class="tile"><b>Wirtschaftsvereinigung Wertingen</b><p>z. Hd. Andreas Klimesch<br>Johann-Drießle-Str. 4, 86637 Wertingen</p></article>
+        <a class="big-btn ghost" href="#">Abrechnungsformular (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MITMACHEN ============ -->
+  <section class="view" id="view-mitmachen" data-title="Mitmachen" hidden>
+    <header class="appbar"><h1 class="title">Mitglied werden</h1></header>
+    <div class="pad">
+      <div class="tile green-card">
+        <b>7,50 €</b><span>im Monat · 90 € im Jahr</span>
+        <ul class="ticks light">
+          <li>Dein Logo im Verzeichnis</li>
+          <li>Annahmestelle Städtle-Scheck</li>
+          <li>Netzwerktreffen &amp; Aktionen</li>
+        </ul>
+      </div>
+      <form class="form" id="join">
+        <label>Firma<input required autocomplete="organization"></label>
+        <label>Dein Name<input required autocomplete="name"></label>
+        <label>Telefon oder E-Mail<input required autocomplete="email"></label>
+        <label class="consent"><input type="checkbox" required><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung gespeichert werden (<a href="#">Datenschutz</a>).</span></label>
+        <button class="big-btn" type="submit">Rückruf anfordern</button>
+        <p class="ok" role="status">Entwurf: Hier würde die Anfrage verschickt.</p>
+      </form>
+      <a class="call-card" href="tel:+4982729869815"><img src="../media/vorstand-katja-killisperger.jpg" alt=""><span><b>Lieber direkt anrufen?</b>Katja Killisperger · 0 82 72 – 986 98 15</span></a>
+    </div>
+  </section>
+
+  <!-- ============ MEHR ============ -->
+  <section class="view" id="view-mehr" data-title="Mehr" hidden>
+    <header class="appbar"><h1 class="title">Über uns</h1></header>
+    <div class="pad">
+      <p class="intro">Seit 1974 die Stimme der lokalen Wirtschaft: 95 Betriebe, die Wertingen gemeinsam stärker machen.</p>
+      <h2 class="h">Vorstand</h2>
+      <div class="hscroll faces">
+        <figure><img src="../media/vorstand-katja-killisperger.jpg" alt=""><figcaption>Katja<br><small>1. Vorsitzende</small></figcaption></figure>
+        <figure><img src="../media/vorstand-alexander-bischof.jpg" alt=""><figcaption>Alexander<br><small>2. Vorsitzender</small></figcaption></figure>
+        <figure><img src="../media/vorstand-andreas-klimesch.jpg" alt=""><figcaption>Andreas<br><small>Schatzmeister</small></figcaption></figure>
+        <figure><img src="../media/vorstand-hans-moraw.jpg" alt=""><figcaption>Hans<br><small>Beisitzer</small></figcaption></figure>
+        <figure><img src="../media/vorstand-katharina-hanel.jpg" alt=""><figcaption>Katharina<br><small>Beisitzerin</small></figcaption></figure>
+        <figure><img src="../media/vorstand-florian-stepan.jpg" alt=""><figcaption>Florian<br><small>Beisitzer</small></figcaption></figure>
+        <figure><img src="../media/vorstand-magdalena-keiss.jpg" alt=""><figcaption>Magdalena<br><small>Beisitzerin</small></figcaption></figure>
+        <figure><img src="../media/vorstand-stefan-krebs.jpg" alt=""><figcaption>Stefan<br><small>Beisitzer</small></figcaption></figure>
+      </div>
+      <h2 class="h" id="termine">Termine</h2>
+      <ul class="menu-list">
+        <li><b>04.12.</b><span>Schlossweihnacht (auch 11.–13.12.)</span></li>
+        <li class="past"><b>25.10.</b><span>Herbstmarkt Wertingen</span></li>
+        <li class="past"><b>02.10.</b><span>Interkulturelles Oktoberfest</span></li>
+        <li class="past"><b>25.09.</b><span>Weißwurst, Breze, Bier &amp; Austausch</span></li>
+      </ul>
+      <h2 class="h">Kontakt &amp; Infos</h2>
+      <ul class="menu-list links">
+        <li><a href="tel:+4982729869815">Anrufen<span>0 82 72 – 986 98 15</span></a></li>
+        <li><a href="mailto:servus@wv-wertingen.de">E-Mail<span>servus@wv-wertingen.de</span></a></li>
+        <li><a href="https://www.instagram.com/wv_wertingen/">Instagram<span>@wv_wertingen</span></a></li>
+        <li><a href="#">Satzung<span>PDF</span></a></li>
+        <li><a href="#">Impressum &amp; Datenschutz<span></span></a></li>
+      </ul>
+      <p class="legal">Designvorschlag 5 · nicht veröffentlicht · Stand November 2026</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- Story-Ansicht -->
+<div class="story-view" id="sv" hidden role="dialog" aria-modal="true" aria-label="Story">
+  <div class="sv-bars" id="sv-bars"></div>
+  <div class="sv-media" id="sv-media"></div>
+  <p class="sv-cap" id="sv-cap"></p>
+  <button class="sv-close" id="sv-close" aria-label="Schließen">×</button>
+  <button class="sv-prev" id="sv-prev" aria-label="Zurück"></button>
+  <button class="sv-next" id="sv-next" aria-label="Weiter"></button>
+</div>
+
+<script src="../members.js"></script>
+<script src="app.js"></script>
+<div class="draft-banner" role="note">Entwurf 5 · nicht die offizielle WV-Website</div>
+</body>
+</html>

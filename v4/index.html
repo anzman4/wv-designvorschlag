@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Wirtschaftsvereinigung Wertingen und Umgebung e.V. (Entwurf 4)</title>
+<meta name="description" content="Das Netzwerk für Unternehmen in Wertingen und Umgebung: Mitglieder finden, Städtle-Scheck, Mitglied werden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="home">
+
+<!-- Die vier Logo-Punkte: wandern auf der Startseite in die Bereiche ihrer Farbe -->
+<div class="flydots" aria-hidden="true">
+  <span style="--c:var(--orange)"></span>
+  <span style="--c:var(--yellow)"></span>
+  <span style="--c:var(--blue)"></span>
+  <span style="--c:var(--green)"></span>
+</div>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Wirtschaftsvereinigung Wertingen – Startseite"><b>wertingen</b><span class="dots4" aria-hidden="true"><i></i><i></i><i></i><i></i></span></a>
+    <nav class="menu" aria-label="Hauptnavigation">
+      <a href="mitglieder.html">Mitglieder</a>
+      <a href="staedtle-scheck.html">Städtle-Scheck</a>
+      <a href="unternehmen.html">Für Unternehmen</a>
+      <a href="verein.html">Über uns</a>
+    </nav>
+    <a class="btn btn-primary cta" href="unternehmen.html#beitritt">Mitglied werden</a>
+    <button class="menu-btn" aria-label="Menü" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1. Ein Satz, eine Suche, ein Video -->
+  <section class="hero4" data-stage>
+    <div class="wrap hero4-grid">
+      <div class="hero4-copy">
+        <p class="eyebrow">Wirtschaftsvereinigung Wertingen und Umgebung e.V.</p>
+        <h1>Gemeinsam für ein starkes Wertingen.</h1>
+        <div class="anchor-row"><i data-a="0"></i><i data-a="1"></i><i data-a="2"></i><i data-a="3"></i></div>
+        <p class="lead">95 Betriebe aus Handel, Handwerk, Gastronomie und Dienstleistung. Finde, wen du suchst:</p>
+        <div class="live-search" role="search">
+          <label class="sr-only" for="ls">Mitglieder durchsuchen</label>
+          <input id="ls" type="search" placeholder="z. B. Bäckerei, Optik, Friseur …" autocomplete="off" aria-controls="ls-hits">
+          <ul class="ls-hits" id="ls-hits" hidden></ul>
+        </div>
+        <div class="quick">
+          <span class="muted small">Beliebt:</span>
+          <button data-q="Gaststätten">Essen &amp; Trinken</button>
+          <button data-q="Mode">Mode</button>
+          <button data-q="Gesundheit">Gesundheit</button>
+          <button data-q="Haus">Haus &amp; Garten</button>
+        </div>
+      </div>
+      <figure class="hero4-media">
+        <video src="../media/fruehling.mp4" poster="../media/fruehling.jpg" autoplay muted loop playsinline aria-label="Video: Frühling in der Stadt, Wertingen"></video>
+        <figcaption class="media-label">Frühling in der Stadt · Mai 2026</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 2. Vier Bereiche, vier Farben -->
+  <section class="section" data-stage>
+    <div class="wrap">
+      <h2 class="reveal" style="margin-bottom:28px">Was suchst du?</h2>
+      <div class="grid-4 areas">
+        <a class="card entry area-blue reveal" href="mitglieder.html">
+          <i class="dot-slot" data-a="2"></i>
+          <h3>Mitglieder finden</h3>
+          <p>Alle 95 Betriebe mit Logo, Branche und Adresse.</p>
+          <span class="arrow-link">Zum Verzeichnis</span>
+        </a>
+        <a class="card entry area-yellow reveal" href="staedtle-scheck.html">
+          <i class="dot-slot" data-a="1"></i>
+          <h3>Städtle-Scheck</h3>
+          <p>Der Gutschein für Wertingen. 5, 10, 20 und 50 €.</p>
+          <span class="arrow-link">Kaufen &amp; einlösen</span>
+        </a>
+        <a class="card entry area-green reveal" href="unternehmen.html">
+          <i class="dot-slot" data-a="3"></i>
+          <h3>Für Unternehmen</h3>
+          <p>Sichtbar werden und dazugehören, für 7,50 € im Monat.</p>
+          <span class="arrow-link">Vorteile ansehen</span>
+        </a>
+        <a class="card entry area-orange reveal" href="verein.html">
+          <i class="dot-slot" data-a="0"></i>
+          <h3>Über uns &amp; Termine</h3>
+          <p>Verein, Vorstand und was im Städtle los ist.</p>
+          <span class="arrow-link">Mehr erfahren</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Nächster Termin mit Countdown -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Nächster Termin</h2>
+        <a class="arrow-link" href="verein.html#termine">Alle Termine</a>
+      </div>
+      <div class="card event event4 reveal">
+        <div class="countdown"><b id="cd">–</b><span>Tage</span></div>
+        <div>
+          <h3>Wertinger Schlossweihnacht</h3>
+          <p class="muted">04.–06. und 11.–13. Dezember 2026 · Schlossgarten am Pappenheimer Schloss · über 50 Aussteller</p>
+        </div>
+        <a class="btn btn-secondary" href="verein.html#termine">Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Logo-Wand -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>95 Betriebe sind dabei</h2>
+        <a class="arrow-link" href="mitglieder.html">Alle Mitglieder</a>
+      </div>
+    </div>
+    <div class="wall reveal" aria-label="Logos unserer Mitgliedsbetriebe"></div>
+  </section>
+
+  <!-- 5. Einladung: hier kommen alle vier Punkte zusammen -->
+  <section class="section" data-stage>
+    <div class="wrap">
+      <div class="cta4 reveal">
+        <div class="clover"><i data-a="0"></i><i data-a="1"></i><i data-a="2"></i><i data-a="3"></i></div>
+        <div>
+          <h2>Dein Betrieb gehört dazu.</h2>
+          <p>Für 7,50 € im Monat: Eintrag mit Logo, Städtle-Scheck, Netzwerktreffen und gemeinsame Aktionen.</p>
+          <div class="btn-row" style="margin-top:22px">
+            <a class="btn btn-light" href="unternehmen.html#beitritt">Jetzt Mitglied werden</a>
+            <a class="btn btn-ghost" href="tel:+4982729869815">Erst mal reden</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html"><b>wertingen</b><span class="dots4" aria-hidden="true"><i></i><i></i><i></i><i></i></span></a>
+        <p class="muted small" style="margin-top:10px">Wirtschaftsvereinigung Wertingen und Umgebung e.V.<br>Eichenweg 4, 86637 Wertingen</p>
+      </div>
+      <div><h4>Entdecken</h4><ul><li><a href="mitglieder.html">Mitglieder</a></li><li><a href="staedtle-scheck.html">Städtle-Scheck</a></li><li><a href="verein.html#termine">Termine</a></li></ul></div>
+      <div><h4>Verein</h4><ul><li><a href="unternehmen.html">Mitglied werden</a></li><li><a href="verein.html">Über uns &amp; Vorstand</a></li><li><a href="https://www.instagram.com/wv_wertingen/">Instagram</a></li></ul></div>
+      <div><h4>Kontakt</h4><ul><li><a href="tel:+4982729869815">0 82 72 – 986 98 15</a></li><li><a href="mailto:servus@wv-wertingen.de">servus@wv-wertingen.de</a></li><li><a href="#">Impressum</a> · <a href="#">Datenschutz</a></li></ul></div>
+    </div>
+    <p class="legal">Designvorschlag 4 · nicht veröffentlicht · Stand November 2026</p>
+  </div>
+</footer>
+
+<script src="../members.js"></script>
+<script src="app.js"></script>
+<script src="home.js"></script>
+<div class="draft-banner" role="note">Entwurf 4 · nicht die offizielle WV-Website</div>
+</body>
+</html>
